@@ -27,8 +27,21 @@ ok: [ubuntu] => {
 
 7.	Ansible-vault encrypt  - зашифровал 
 8.	ansible-playbook -i inventory/prod.yml site.yml --ask-vault-pass – все получилось 
-9.	ssh
-10.	Сделал
+9.	ansible-doc -t connection -l   ssh - считаю подходящим плагином 
+10.	Добавил 
+el:
+    hosts:
+      centos7:
+        ansible_connection: docker
+  deb:
+    hosts:
+      ubuntu:
+        ansible_connection: docker
+  local:
+    hosts:
+      localhost:
+        ansible_connection: local
+
 11.	Проверил, все правильно 
 12.	Заполнил 
 
